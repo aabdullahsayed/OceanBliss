@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ওশান ব্লিস - রিয়েল ক্যাপিটা গ্রুপ</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif Bengali', serif;
+            background-color: #f8fafc;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, p, a, label, input, textarea, button {
+            font-family: 'Noto Serif Bengali', serif;
+            color: #1e3a8a;
+        }
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+        p, a, label, input, textarea, button {
+            font-weight: 400;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTI4MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIj4gICAgICAgIDxwYXRoIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOCIgZD0iTTAuMDAwLDE0MC4wMDBDMjU2LjAwMCwxNDAuMDAwIDI1Ni4wMDAsNzAuMDAwIDUxMi4wMDAsNzAuMDAwQzUxMi4wMDAsNzAuMDAwIDUxMi4wMDAsMTQwLjAwMCA3NjguMDAwLDE0MC4wMDBDNzY4LjAwMCwxNDAuMDAwIDc2OC4wMDAsNzAuMDAwIDEwMjQuMDAwLDcwLjAwMEMxMDI0LjAwMCw3MC4wMDAgMTAyNC4wMDAsMTQwLjAwMCAxMjgwLjAwMCwxNDAuMDAwVjAuMDAwSDBWMTAwWiI+ICAgICAgICA8YW5pbWF0ZVRyYW5zZm9ybSBhdHRyaWJ1dGVOYW1lPSJ0cmFuc2Zvcm0iIHR5cGU9InRyYW5zbGF0ZSIga2V5VGltZXM9IjA7MSIga2V5U3BsaW5lcz0iMC4zIDAgMCAwLjciIHZhbHVlcz0iMCAwOy0xMjgwIDAiIGR1cj0iMTBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIvPiAgICAgICAgPC9wYXRoPiAgICAgICAgPHBhdGggZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC41IiBkPSJNMTAyNC4wMDAsMTAwLjAwMEMxMjgwLjAwMCwxMDAuMDAwIDEyODAuMDAwLDMwLjAwMCAxNTM2LjAwMCwzMC4wMDBDMTUzNi4wMDAsMzAuMDAwIDE1MzYuMDAwLDEwMC4wMDAgMTc5Mi4wMDAsMTAwLjAwMEMxNzkyLjAwMCwxMDAuMDAwIDE3OTIuMDAwLDMwLjAwMCAyMDQ4LjAwMCwzMC4wMDBDMjA0OC4wMDAsMzAuMDAwIDIwMDQ4LjAwMCwxMDAuMDAwIDIzMDQuMDAwLDEwMC4wMDBWMTAwLjAwMEgwVjEwMFoiPiAgICAgICAgPGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJ0cmFuc2xhdGUiIGtleVRpbWVzPSIwOzEiIGtleVNwbGluZXM9IjAuMyAwIDAgMC43IiB2YWx1ZXM9IjAgMDstMjMwNCAwIiBkdXI9IjE1cyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiLz4gICAgICAgIDwvcGF0aD4gICAgPC9zdmc+');
+            background-size: 200% 100%;
+            animation: wave 10s linear infinite;
+        }
+        @keyframes wave {
+            0% { background-position: 0 bottom; }
+            100% { background-position: -200% bottom; }
+        }
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+        .benefit-card, .room-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+            cursor: pointer;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .benefit-card.visible, .room-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .benefit-card:hover, .room-card:hover {
+            transform: scale(1.05) translateY(-12px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.2s ease-in forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .hero-content > * {
+            animation-delay: calc(0.3s * var(--i));
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .gradient-btn {
+            background: linear-gradient(45deg, #1e3a8a, #06b6d4);
+            transition: background 0.3s ease, transform 0.3s ease;
+            color: white;
+        }
+        .gradient-btn:hover {
+            background: linear-gradient(45deg, #1e40af, #0ea5e9);
+            transform: scale(1.05);
+        }
+        .hero-bg h1, .hero-bg p, .hero-bg a {
+            color: white;
+        }
+        .navbar {
+            background: rgba(30, 58, 138, 0.9);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(30, 58, 138, 1);
+        }
+        .nav-link {
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #06b6d4;
+            transform: translateY(-2px);
+        }
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .language-btn {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+        .language-btn.active {
+            background: #06b6d4;
+            color: white;
+        }
+        .language-btn:hover {
+            background: #06b6d4;
+            transform: scale(1.1);
+        }
+        .room-card.popular {
+            border: 2px solid #ffd700;
+            position: relative;
+        }
+        .room-card.popular::before {
+            content: 'Popular';
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffd700;
+            color: #1e3a8a;
+            padding: 0.25rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-white text-xl font-bold data-lang" data-bn="ওশান ব্লিস" data-en="Ocean Bliss">ওশান ব্লিস</div>
+            <div class="flex space-x-4 items-center">
+                <a href="#about" class="nav-link text-white data-lang" data-bn="সম্পর্কে" data-en="About">সম্পর্কে</a>
+                <a href="#invest" class="nav-link text-white data-lang" data-bn="আমাদের সাথে বিনিয়োগ" data-en="Invest with Us">আমাদের সাথে বিনিয়োগ</a>
+                <a href="#portfolio" class="nav-link text-white data-lang" data-bn="আমাদের পোর্টফোলিও" data-en="Our Portfolio">আমাদের পোর্টফোলিও</a>
+                <a href="#team" class="nav-link text-white data-lang" data-bn="দল" data-en="The Team">দল</a>
+                
+                <a href="#news" class="nav-link text-white data-lang" data-bn="নিউজ মিডিয়া" data-en="News Media">নিউজ মিডিয়া</a>
+                <a href="#blog" class="nav-link text-white data-lang" data-bn="ব্লগ" data-en="Blog">ব্লগ</a>
+                <a href="#contact" class="nav-link text-white data-lang" data-bn="যোগাযোগ" data-en="Contact">যোগাযোগ</a>
+                <div class="language-switcher">
+                    <button class="language-btn active" onclick="switchLanguage('bn')">BN</button>
+                    <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Wave Effect and Fade-In -->
+    <section class="hero-bg">
+        <div class="wave"></div>
+        <div class="max-w-5xl mx-auto px-4 hero-content">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in data-lang" style="--i:1" data-bn="ওশান ব্লিস: শেয়ারের মাধ্যমে স্বপ্নের জীবন" data-en="Ocean Bliss: A Dream Life Through Shares">ওশান ব্লিস: শেয়ারের মাধ্যমে স্বপ্নের জীবন</h1>
+            <p class="text-xl md:text-2xl mb-8 fade-in data-lang" style="--i:2" data-bn="কুয়াকাটা সমুদ্র সৈকতে আরসি বে-এর বিলাসবহুল ট্যুরিস্ট হোটেলে বিনিয়োগ করুন এবং আজীবন প্রশান্তি উপভোগ করুন।" data-en="Invest in RC BAY's luxurious tourist hotel at Kuakata Beach and enjoy lifelong tranquility.">কুয়াকাটা সমুদ্র সৈকতে আরসি বে-এর বিলাসবহুল ট্যুরিস্ট হোটেলে বিনিয়োগ করুন এবং আজীবন প্রশান্তি উপভোগ করুন।</p>
+            <a href="#contact" class="gradient-btn py-4 px-8 rounded-full text-lg font-semibold shadow-lg fade-in data-lang" style="--i:3" data-bn="এখনই বিনিয়োগ শুরু করুন" data-en="Start Investing Now">এখনই বিনিয়োগ শুরু করুন</a>
+        </div>
+    </section>
+
+    <!-- At a Glance Section -->
+    <section id="at-a-glance" class="section-padding bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8 data-lang" data-bn="“আরসি ওশান ব্লিস” এক নজরে" data-en="“RC Ocean Bliss” At a Glance">“আরসি ওশান ব্লিস” এক নজরে</h2>
+            <p class="text-lg text-center mb-12 data-lang" data-bn="কুয়াকাটা সমুদ্র সৈকতের অসাধারণ দৃশ্যাবলীকে আলিঙ্গন করে, আরসি ওশান ব্লিস হোটেল সমুদ্র সৈকতের খুব কাছে অবস্থিত, অতিথিদের জন্য বিশ্বমানের সুবিধা এবং উত্তেজনাপূর্ণ অভিজ্ঞতা প্রদান করে। আপনি একটি দুর্দান্ত ছুটি, সবচেয়ে মধুর মধুযামিনী বা একটি আরামদায়ক ব্যবসায়িক ভ্রমণ পরিকল্পনা করছেন কিনা, আপনার আরামদায়ক থাকার জন্য আমাদের সমুদ্র সৈকত হোটেল পছন্দ করবেন। কল্পনা করুন যে প্রাকৃতিক অসাধারণ বালুকাময় সমুদ্র সৈকত আপনার রুম থেকে চোখের পলকে দূরত্বে, আপনার মনে একটি উচ্ছ্বসিত অনুভূতি প্রদান করে এবং আপনার হৃদয়কে অসাধারণ আনন্দ এবং সুখে ভরিয়ে তোলে। আরসি ওশান ব্লিস হোটেলের রুম এবং স্যুটগুলি অসাধারণভাবে শৈলী এবং আরাম পূরণ করে। কুয়াকাটার সমুদ্র সৈকত দৃশ্য থেকে শুরু করে আপনি যে সুবিধাগুলি খুঁজছেন সবই এখানে, যা আরসি ওশান ব্লিস হোটেলকে ব্যবসা, রোমান্স এবং ছুটির ভ্রমণের জন্য নিখুঁত পছন্দ করে তোলে। কুয়াকাটায় আমাদের সাথে থেকে আপনার প্রত্যেক মুহূর্তকে স্মরণীয় করে তুলুন।" data-en="Encompassing the spectacular views of Kuakata Beach, RC Ocean Bliss Hotel stands very close to sea-beach, offering world class facilities and exhilarating experience to its guests. Whether you are planning a great vacation, the sweetest of honeymoons or a cozy business tour, you would prefer our beach hotel for your relaxing stay. Imagine that the natural astonishing sandy beach is just blink of eye distance from your room, providing an exuberant sensation in your mind and filling your heart with magnificent pleasure & delightfulness. The rooms and suites at RC Ocean Bliss Hotel remarkably fulfills style and comfort. Starting from kuakata’s beach view to the comforts which you would be looking for all are here, making RC Ocean Bliss Hotel the perfect choice for business, romance and holiday travel. Make your every moment memorable in Kuakata by staying with us.">কুয়াকাটা সমুদ্র সৈকতের অসাধারণ দৃশ্যাবলীকে আলিঙ্গন করে, আরসি ওশান ব্লিস হোটেল সমুদ্র সৈকতের খুব কাছে অবস্থিত, অতিথিদের জন্য বিশ্বমানের সুবিধা এবং উত্তেজনাপূর্ণ অভিজ্ঞতা প্রদান করে। আপনি একটি দুর্দান্ত ছুটি, সবচেয়ে মধুর মধুযামিনী বা একটি আরামদায়ক ব্যবসায়িক ভ্রমণ পরিকল্পনা করছেন কিনা, আপনার আরামদায়ক থাকার জন্য আমাদের সমুদ্র সৈকত হোটেল পছন্দ করবেন। কল্পনা করুন যে প্রাকৃতিক অসাধারণ বালুকাময় সমুদ্র সৈকত আপনার রুম থেকে চোখের পলকে দূরত্বে, আপনার মনে একটি উচ্ছ্বসিত অনুভূতি প্রদান করে এবং আপনার হৃদয়কে অসাধারণ আনন্দ এবং সুখে ভরিয়ে তোলে। আরসি ওশান ব্লিস হোটেলের রুম এবং স্যুটগুলি অসাধারণভাবে শৈলী এবং আরাম পূরণ করে। কুয়াকাটার সমুদ্র সৈকত দৃশ্য থেকে শুরু করে আপনি যে সুবিধাগুলি খুঁজছেন সবই এখানে, যা আরসি ওশান ব্লিস হোটেলকে ব্যবসা, রোমান্স এবং ছুটির ভ্রমণের জন্য নিখুঁত পছন্দ করে তোলে। কুয়াকাটায় আমাদের সাথে থেকে আপনার প্রত্যেক মুহূর্তকে স্মরণীয় করে তুলুন।</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="room-card bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 data-lang" data-bn="ডিলাক্স স্যুট @ ৩০০ বর্গফুট" data-en="Deluxe Suite @ 300 sft">ডিলাক্স স্যুট @ ৩০০ বর্গফুট</h3>
+                    <a href="#" class="gradient-btn block text-center py-2 rounded-lg data-lang" data-bn="এখানে ক্লিক করুন" data-en="Click Here">এখানে ক্লিক করুন</a>
+                </div>
+                <div class="room-card bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 data-lang" data-bn="স্ট্যান্ডার্ড ডিলাক্স @ ৪০০ বর্গফুট" data-en="Standard Deluxe @ 400 sft">স্ট্যান্ডার্ড ডিলাক্স @ ৪০০ বর্গফুট</h3>
+                    <a href="#" class="gradient-btn block text-center py-2 rounded-lg data-lang" data-bn="এখানে ক্লিক করুন" data-en="Click Here">এখানে ক্লিক করুন</a>
+                </div>
+                <div class="room-card bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 data-lang" data-bn="এক্সিকিউটিভ স্যুট @ ৫০০ বর্গফুট" data-en="Executive Suite @ 500 sft">এক্সিকিউটিভ স্যুট @ ৫০০ বর্গফুট</h3>
+                    <a href="#" class="gradient-btn block text-center py-2 rounded-lg data-lang" data-bn="এখানে ক্লিক করুন" data-en="Click Here">এখানে ক্লিক করুন</a>
+                </div>
+                <div class="room-card popular bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 data-lang" data-bn="জনপ্রিয় প্রেসিডেন্ট স্যুট @ ৬০০ বর্গফুট" data-en="Popular President Suite @ 600 sft">জনপ্রিয় প্রেসিডেন্ট স্যুট @ ৬০০ বর্গফুট</h3>
+                    <a href="#" class="gradient-btn block text-center py-2 rounded-lg data-lang" data-bn="এখানে ক্লিক করুন" data-en="Click Here">এখানে ক্লিক করুন</a>
+                </div>
+            </div>
+            <a href="#contact" class="gradient-btn block w-fit mx-auto py-3 px-6 rounded-lg text-lg font-semibold data-lang" data-bn="দ্রুত অনুসন্ধান" data-en="QUICK ENQUIRY">দ্রুত অনুসন্ধান</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section with Unified Font -->
+    <section class="section-padding bg-gradient-to-b from-gray-50 to-blue-100 parallax" style="background-image: url('https://images.unsplash.com/photo-1505832018823-50331d70c49d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 data-lang" data-bn="কেন ওশান ব্লিস বেছে নেবেন?" data-en="Why Choose Ocean Bliss?">কেন ওশান ব্লিস বেছে নেবেন?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="benefit-card bg-white bg-opacity-90 p-8 rounded-xl shadow-lg border border-blue-100">
+                    <h3 class="text-2xl font-bold mb-3 data-lang" data-bn="আজীবন প্রশান্তি" data-en="Lifelong Tranquility">আজীবন প্রশান্তি</h3>
+                    <p class="text-gray-700 data-lang" data-bn="স্পা, সমুদ্রতীরের দৃশ্য এবং ব্যক্তিগত কনসিয়ার্জ সেবায় অগ্রাধিকার পান।" data-en="Priority access to spa, beachfront views, and personalized concierge services.">স্পা, সমুদ্রতীরের দৃশ্য এবং ব্যক্তিগত কনসিয়ার্জ সেবায় অগ্রাধিকার পান।</p>
+                </div>
+                <div class="benefit-card bg-white bg-opacity-90 p-8 rounded-xl shadow-lg border border-blue-100">
+                    <h3 class="text-2xl font-bold mb-3 data-lang" data-bn="লাভের অংশীদারিত্ব" data-en="Profit Sharing">লাভের অংশীদারিত্ব</h3>
+                    <p class="text-gray-700 data-lang" data-bn="মৌসুমী লাভ এবং স্বচ্ছ ত্রৈমাসিক রিপোর্টের মাধ্যমে বোনাস ডিভিডেন্ড।" data-en="Seasonal profits with transparent quarterly reports and bonus dividends.">মৌসুমী লাভ এবং স্বচ্ছ ত্রৈমাসিক রিপোর্টের মাধ্যমে বোনাস ডিভিডেন্ড।</p>
+                </div>
+                <div class="benefit-card bg-white bg-opacity-90 p-8 rounded-xl shadow-lg border border-blue-100">
+                    <h3 class="text-2xl font-bold mb-3 data-lang" data-bn="মনোমুগ্ধকর অবস্থান" data-en="Enchanting Location">মনোমুগ্ধকর অবস্থান</h3>
+                    <p class="text-gray-700 data-lang" data-bn="কুয়াকাটার মায়াবী সমুদ্রতীরে, সূর্যোদয় ও সূর্যাস্তের অপরূপ মিলন।" data-en="At Kuakata’s magical beach, where sunrise and sunset blend beautifully.">কুয়াকাটার মায়াবী সমুদ্রতীরে, সূর্যোদয় ও সূর্যাস্তের অপরূপ মিলন।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Unified Font -->
+    <section id="contact" class="section-padding bg-blue-50">
+        <div class="max-w-lg mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 data-lang" data-bn="আপনার স্বপ্নের যাত্রা শুরু করুন" data-en="Start Your Dream Journey">আপনার স্বপ্নের যাত্রা শুরু করুন</h2>
+            <form action="#" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-800 data-lang" data-bn="নাম" data-en="Name">নাম</label>
+                    <input type="text" id="name" name="name" class="w-full p-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="আপনার নাম" data-bn-placeholder="আপনার নাম" data-en-placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-800 data-lang" data-bn="ইমেইল" data-en="Email">ইমেইল</label>
+                    <input type="email" id="email" name="email" class="w-full p-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="আপনার ইমেইল" data-bn-placeholder="আপনার ইমেইল" data-en-placeholder="Your Email" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-800 data-lang" data-bn="বার্তা" data-en="Message">বার্তা</label>
+                    <textarea id="message" name="message" rows="5" class="w-full p-4 border border-blue-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="আপনার আগ্রহ সম্পর্কে বলুন" data-bn-placeholder="আপনার আগ্রহ সম্পর্কে বলুন" data-en-placeholder="Tell us about your interest" required></textarea>
+                </div>
+                <button type="submit" class="w-full gradient-btn py-4 rounded-lg text-lg font-medium shadow-md data-lang" data-bn="পাঠান" data-en="Submit">পাঠান</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer with Unified Font -->
+    <footer class="bg-blue-900 text-white text-center py-6">
+        <p class="text-lg data-lang" data-bn="&copy; ২০২৫ রিয়েল ক্যাপিটা গ্রুপ - আরসি বে। সমুদ্রের কলতানে নির্মিত।" data-en="&copy; 2025 Real Capita Group - RC BAY. Crafted with the rhythm of the sea.">&copy; ২০২৫ রিয়েল ক্যাপিটা গ্রুপ - আরসি বে। সমুদ্রের কলতানে নির্মিত।</p>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('.data-lang').forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+            document.querySelectorAll('input, textarea').forEach(element => {
+                const placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                if (placeholder) {
+                    element.placeholder = placeholder;
+                }
+            });
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === lang.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+            document.documentElement.lang = lang;
+            // Update popular badge for Bangla/English
+            const popularBadge = document.querySelector('.room-card.popular::before');
+            if (popularBadge) {
+                popularBadge.content = lang === 'bn' ? 'জনপ্রিয়' : 'Popular';
+            }
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.benefit-card, .room-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
